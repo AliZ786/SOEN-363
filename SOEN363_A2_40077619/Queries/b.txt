@@ -1,0 +1,11 @@
+SELECT User1.userName, count (DISTINCT Ttags1.hashtag)
+FROM Users AS User1, TweetTags AS Ttags1, Tweets AS Tweet1
+WHERE User1.userid = Tweet1.userid AND Tweet1.tweetid = Ttags1.tweetid
+
+GROUP BY User1.userName
+
+
+
+
+
+

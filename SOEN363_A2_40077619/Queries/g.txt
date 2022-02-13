@@ -1,0 +1,5 @@
+SELECT User1.userName
+FROM Users AS User1, Tweets AS Tweet1, Follows AS Fol1
+WHERE User1.userid = Fol1.followerid AND Tweet1.userid = Fol1.followeeid
+AND Tweet1.tweettimestamp > User1.lastlogin
+GROUP BY User1.userid

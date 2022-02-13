@@ -1,0 +1,12 @@
+SELECT Tweet1.tweettext
+FROM Users AS User1, Tweets AS Tweet1, Follows AS Fol1
+WHERE Fol1.followeeid = Tweet1.userid AND Tweet1.tweettimestamp > User1.lastlogin
+AND User1.userName = 'Geoffrey Hinton' AND User1.userid = Fol1.followerid
+
+UNION 
+
+SELECT Tweet1.tweettext
+FROM Users AS User1, Tweets AS Tweet1, Follows AS Fol1, Retweets AS Retweet1
+WHERE Fol1.followeeid = Retweet1.userid AND Tweet1.tweettimestamp > User1.lastlogin
+AND User1.userName = 'Geoffrey Hinton' AND User1.userid = Fol1.followerid
+

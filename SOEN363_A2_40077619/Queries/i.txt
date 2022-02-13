@@ -1,0 +1,6 @@
+SELECT User1.userName
+FROM Users AS User1, Users AS User2, Tweets AS Tweet1, Retweets AS Retweet1
+WHERE User1.userid = Retweet1.userid AND Tweet1.tweetid = Retweet1.tweetid
+AND User2.userid = Tweet1.userid AND User2.userName = 'Andrew Ng'
+GROUP BY User1.userid
+

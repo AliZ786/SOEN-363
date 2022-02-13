@@ -1,0 +1,6 @@
+SELECT User1.*
+FROM Users AS User1, Users AS User2, Follows AS Fol1, Follows AS Fol2
+WHERE Fol1.followeeid = Fol2.followeeid AND User1.userid = Fol2.followerid
+AND User2.userid = Fol1.followerid AND User1.userName != 'Ian Goodfellow'
+AND User2.userName = 'Ian Goodfellow'
+GROUP BY User1.userid

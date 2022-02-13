@@ -1,0 +1,12 @@
+SELECT User1.userName
+FROM Users AS User1, Tweets AS Tweet1
+WHERE User1.userid = Tweet1.userid
+GROUP BY User1.userid
+
+EXCEPT
+
+SELECT User1.userName
+FROM Users AS User1, Tweets AS Tweet1, Retweets AS Retweet1
+WHERE User1.userid = Tweet1.userid AND Retweet1.tweetid = Tweet1.tweetid
+GROUP BY User1.userid
+

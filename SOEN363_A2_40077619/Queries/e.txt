@@ -1,0 +1,8 @@
+SELECT User1.userName, User1.city
+FROM Users AS User1, Users AS User2, Follows AS Fol1
+JOIN Follows AS Fol2 ON Fol1.followeeid = Fol2.followerid
+WHERE User1.userid = Fol1.followerid AND User2.userid = Fol2.followeeid AND User2.userName = 'Yoshua Bengio'
+GROUP BY User1.userid
+ORDER BY userName ASC
+
+

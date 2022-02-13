@@ -1,0 +1,9 @@
+SELECT Ttag1.hashtag, count(DISTINCT Retweet1.tweetid)
+FROM TweetTags AS Ttag1, Retweets AS Retweet1, Tweets AS Tweet1
+WHERE Retweet1.retweettimestamp >= '2021-01-01 00:00:00' AND Retweet1.tweetid = Tweet1.tweetid
+AND Ttag1.tweetid = Retweet1.tweetid
+GROUP BY Ttag1.hashtag 
+ORDER BY count(*) DESC 
+LIMIT 1
+
+
