@@ -1,0 +1,16 @@
+SELECT User1.userName AS "Tweeted User Name" , User2.userName AS "Retweeted User Name", Tweet1.tweetText AS "Retweeted Tweet", 
+		Tweet2.tweetTimestamp AS "Retweeted Timestamp"
+FROM Users AS User1, Users AS User2, Tweets AS Tweet1, Tweets AS Tweet2, Retweets AS Retweet1, TweetTags AS Ttags1
+
+WHERE User1.userId = Tweet2.userId AND Tweet1.userId = User2.userId AND Tweet2.tweetTimestamp < '2008-01-01 00:00:00' AND Tweet2.tweetId = Ttags1.tweetId
+AND Ttags1.hashtag = '#MachineLearning' AND Retweet1.tweetId = Tweet2.tweetId AND Retweet1.userId = User2.userId
+
+
+
+
+
+
+
+
+
+
